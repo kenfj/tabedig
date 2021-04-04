@@ -1,41 +1,55 @@
-# TypeScript Next.js example
+# Tabedig App
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+Live Demo: https://kenfj.github.io/tabedig/
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Setup
 
 ```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
+# Next.js with TypeScript
+# https://github.com/vercel/next.js/tree/master/examples/with-typescript
+npx create-next-app tabedig-app --example with-typescript --use-npm
+
+cd tabedig-app
+
+# create src directory and mv pages components etc to src
+# https://nextjs.org/docs/advanced-features/src-directory
+
+npm install gh-pages --save-dev
+
+# start development server
+npm run dev
+open http://localhost:3000
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Deploy
 
-## Notes
+```bash
+npm run build
+# check the output
+# λ  (Server)
+# ○  (Static)
+# ●  (SSG)
+# Note: "next export" will only handle Static and SSG
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
-
+# manually deploy to GitHub Pages
+export CI=true
+export REPO_NAME=tabedig
+npm run build
+npm run export
+touch ./out/.nojekyll
+npm run deploy
 ```
-npm install --save-dev typescript
-```
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+* `start` or `export`? (https://stackoverflow.com/questions/61724368)
+  - `npm run build`: build to `.next` (required before `start` or `export`)
+  - `npm run start`: start hybrid server of SSG and SSR (Server Side Rendering)
+  - `npm run export`: generate to `out` for SSG (Static Site Generator)
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+## Reference
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+* https://nextjs.org/docs/getting-started
+* https://www.wakuwakubank.com/posts/771-react-nextjs-ssg/
+* https://kakakakakku.hatenablog.com/entry/2020/04/14/100623
+* https://create-react-app.dev/docs/deployment/#github-pages
+* Deploy Next.js (SSG) to GitHub Pages using GitHub Actions
+  - https://www.youtube.com/watch?v=yRz8D_oJMWQ
