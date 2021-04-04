@@ -1,2 +1,0 @@
-# Next Export API redirects
-/api/users /.netlify/functions/__api__users 200
