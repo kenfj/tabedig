@@ -23,6 +23,14 @@ npm install --save-dev \
   @typescript-eslint/eslint-plugin \
   eslint-config-react-app
 
+# install peerDependencies (from lint error)
+npm install --save-dev \
+  eslint-plugin-flowtype \
+  eslint-plugin-import \
+  eslint-plugin-jsx-a11y \
+  eslint-plugin-react \
+  eslint-plugin-react-hooks
+
 # update eslintConfig in package.json from typescript-eslint config
 # https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#configuration
 
@@ -52,6 +60,9 @@ export REPO_NAME=tabedig
 npm run build
 npm run export
 touch ./out/.nojekyll
+
+# gh-pages -d out -t
+# https://qiita.com/wintyo/items/62b03a38c6fbae8ea914
 npm run deploy
 ```
 
