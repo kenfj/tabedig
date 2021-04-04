@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: "14"
       - run: npm ci
+      - run: npm run lint
       - run: npm run build
         # set repository name env var
         # https://stackoverflow.com/questions/62803531

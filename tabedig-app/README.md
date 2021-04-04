@@ -16,6 +16,21 @@ cd tabedig-app
 
 npm install gh-pages --save-dev
 
+# install only eslint (without Prettier same as create react app)
+npm install --save-dev \
+  eslint \
+  @typescript-eslint/parser \
+  @typescript-eslint/eslint-plugin \
+  eslint-config-react-app
+
+# update eslintConfig in package.json from typescript-eslint config
+# https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#configuration
+
+# fix Link for known issue of jsx-a11y/anchor-is-valid
+# https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md#case-i-use-nextjs-and-im-getting-this-error-inside-of-links
+
+npm run lint
+
 # start development server
 npm run dev
 open http://localhost:3000

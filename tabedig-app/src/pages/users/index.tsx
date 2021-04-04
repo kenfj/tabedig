@@ -19,8 +19,8 @@ const WithStaticProps = ({ items }: Props) => (
     <p>You are currently on: /users</p>
     <List items={items} />
     <p>
-      <Link href="/">
-        <a>Go home</a>
+      <Link href="/" passHref>
+        <a href="_">Go home</a>
       </Link>
     </p>
   </Layout>
