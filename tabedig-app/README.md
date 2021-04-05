@@ -79,3 +79,4 @@ npm run deploy
 * https://create-react-app.dev/docs/deployment/#github-pages
 * Deploy Next.js (SSG) to GitHub Pages using GitHub Actions
   - https://www.youtube.com/watch?v=yRz8D_oJMWQ
+* https://gotohayato.com/content/517/
