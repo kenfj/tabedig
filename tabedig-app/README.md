@@ -23,14 +23,6 @@ npm install --save-dev \
   @typescript-eslint/eslint-plugin \
   eslint-config-react-app
 
-# install peerDependencies (from lint error)
-npm install --save-dev \
-  eslint-plugin-flowtype \
-  eslint-plugin-import \
-  eslint-plugin-jsx-a11y \
-  eslint-plugin-react \
-  eslint-plugin-react-hooks
-
 # update eslintConfig in package.json from typescript-eslint config
 # https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#configuration
 
