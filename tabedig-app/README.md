@@ -9,6 +9,10 @@ Live Demo: https://kenfj.github.io/tabedig/
 # https://github.com/vercel/next.js/tree/master/examples/with-typescript
 npx create-next-app tabedig-app --example with-typescript --use-npm
 
+# better sample code in --example with-typescript
+# but useful to refer --example with-chakra-ui-typescript
+# https://github.com/vercel/next.js/tree/master/examples/with-chakra-ui-typescript
+
 cd tabedig-app
 
 # create src directory and mv pages components etc to src
@@ -34,6 +38,19 @@ npm run lint
 # start development server
 npm run dev
 open http://localhost:3000
+```
+
+```bash
+# install Chakra UI
+# https://chakra-ui.com/docs/getting-started
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+# optional
+npm i @chakra-ui/icons @chakra-ui/theme-tools
+```
+
+```bash
+npm outdated  # check
+npm update    # update
 ```
 
 ## Deploy
@@ -63,6 +80,40 @@ npm run deploy
   - `npm run start`: start hybrid server of SSG and SSR (Server Side Rendering)
   - `npm run export`: generate to `out` for SSG (Static Site Generator)
 
+## Chakra UI Cheat Sheet
+
+1. put layout (most likely `<Stack>` or `<Flex>`)
+2. put boxes (`<Box>` `<Heading>` `<Text>`) in the layout
+3. adjust size, margin/padding and color
+
+__Tag Component Comparison__
+
+* `<h1>` -> `<Heading as="h1">`
+* `<p>` -> `<Text>` or `<Container>`
+* `<div>`
+  - `<Box>` just `<div>` (`<Card>` in Material UI)
+  - `<Stack>` box list container used with `<StackDivider/>`
+  - `<Flex>` flex box container used with `<Spacer/>`
+    - note `<Flex>` can span the entire width but not `<Stack>`
+* `<a>` -> `<Link>` or `<Box as="a">`
+
+```JSX
+// typical use case
+<Flex> (or could be <Stack>)
+  <Box>
+    <Heading>Foo</Heading>
+    <Text>foo</Text>
+  </Box>
+  <Box>
+    <Heading>Bar</Heading>
+    <Text>bar</Text>
+  </Box>
+</Flex> (or </Stack>)
+```
+
+* Flex and Spacer vs Grid vs Stack
+  - https://chakra-ui.com/docs/layout/flex#flex-and-spacer-vs-grid-vs-stack
+
 ## Reference
 
 * https://nextjs.org/docs/getting-started
@@ -72,3 +123,5 @@ npm run deploy
 * Deploy Next.js (SSG) to GitHub Pages using GitHub Actions
   - https://www.youtube.com/watch?v=yRz8D_oJMWQ
 * https://gotohayato.com/content/517/
+* How to Use Chakra UI with Next.js and React
+  - https://www.youtube.com/watch?v=ubB5l-HVPgY
