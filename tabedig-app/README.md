@@ -49,6 +49,10 @@ npm i @chakra-ui/icons @chakra-ui/theme-tools
 ```
 
 ```bash
+npm install react-google-charts @types/google.visualization
+```
+
+```bash
 npm outdated  # check
 npm update    # update
 ```
@@ -125,3 +129,6 @@ __Tag Component Comparison__
 * https://gotohayato.com/content/517/
 * How to Use Chakra UI with Next.js and React
   - https://www.youtube.com/watch?v=ubB5l-HVPgY
+* https://techblog.lclco.com/entry/2020/12/20/080000
+* https://lamlam.dev/posts/nextjs-chakraui-ogp
+* https://medium.com/swlh/next-js-usestaticprops-usestaticpaths-static-json-data-9f7903b8a5aa

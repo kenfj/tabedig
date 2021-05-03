@@ -26,4 +26,8 @@ scrapy shell 'https://tabelog.com/tokyo/A1303/A130302/'
 
 ```bash
 scrapy crawl ebisu -o reviews.csv
+
+# CSV to JSON
+npx csvtojson reviews.csv > reviews.json
+# https://qiita.com/masatomix/items/23ca68ad1f3b6be79ae4
 ```
