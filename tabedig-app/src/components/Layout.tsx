@@ -1,5 +1,6 @@
+import { Box, Link } from '@chakra-ui/react'
 import Head from 'next/head'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import React, { ReactNode } from 'react'
 
 type Props = {
@@ -7,30 +8,33 @@ type Props = {
   title?: string
 }
 
-const siteTitle = 'Next.js + TypeScript Example'
+const siteTitle = "Tabedig"
 
-const Layout = ({ children, title = 'default title' }: Props) => (
-  <div className="page">
+const Layout = ({ children, title }: Props) => (
+  <Box pt={8}>
     <Head>
       <title>{title} | {siteTitle}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>" />
     </Head>
 
     <header>
-      <nav>
-        <Link href="/" passHref>
-          <a href="_">Home</a>
-        </Link>
-        {' | '}
-        <Link href="/about" passHref>
-          <a href="_">About</a>
-        </Link>
-        {' | '}
-        <Link href="/users" passHref>
-          <a href="_">Users List</a>
-        </Link>
-      </nav>
+      <Box pl={8}>
+        <nav>
+          <NextLink href="/" passHref>
+            <Link>Home</Link>
+          </NextLink>
+          {/* {" | "}
+          <NextLink href="/users" passHref>
+            <Link>Users List</Link>
+          </NextLink> */}
+          {" | "}
+          <NextLink href="/about" passHref>
+            <Link>About</Link>
+          </NextLink>
+        </nav>
+      </Box>
     </header>
 
     <main>
@@ -38,22 +42,11 @@ const Layout = ({ children, title = 'default title' }: Props) => (
     </main>
 
     <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
+      <Box mt={8}>
+        <hr />
+      </Box>
     </footer>
-
-    <style jsx>{`
-      .page {
-        margin: 30px 50px;
-      }
-    `}</style>
-
-    <style jsx global>{`
-      body {
-        background-color: floralwhite;
-      }
-    `}</style>
-  </div>
+  </Box>
 )
 
 export default Layout
