@@ -1,11 +1,10 @@
-import { Box, Heading } from '@chakra-ui/layout'
-import { Badge, Checkbox, Container, VStack } from '@chakra-ui/react'
+import { Checkbox } from '@chakra-ui/checkbox'
+import { Badge, Box, Container, Heading, VStack } from '@chakra-ui/layout'
 import { GetStaticProps } from 'next'
 import React, { ChangeEvent, useState } from 'react'
 import Chart from 'react-google-charts'
 import Layout from '../components/Layout'
 import { ChartData } from '../interfaces'
-import { reviewData } from '../utils/sample-data'
 
 const badgeProps = {
   ml: 1,
@@ -85,7 +84,7 @@ const IndexPage = ({ chartData }: Props) => {
           </Box>
 
           <Container textAlign="center">
-            サンプル数: {reviewData.length - 1}店
+            サンプル数: {chartData.length - 1}店
             <Checkbox ml={8} onChange={handleCheckbox}>
               対数目盛を利用
             </Checkbox>
@@ -119,6 +118,7 @@ const IndexPage = ({ chartData }: Props) => {
 export default IndexPage
 
 export const getStaticProps: GetStaticProps = async () => {
-  const chartData: ChartData = reviewData
+  const module = await import("../utils/sample-data")
+  const chartData: ChartData = module.reviewData
   return { props: { chartData } }
 }

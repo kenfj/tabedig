@@ -1,6 +1,5 @@
-import { Box, Heading, Link, ListItem, Text, UnorderedList, VStack } from '@chakra-ui/react'
+import { Box, Heading, Link, ListItem, Text, UnorderedList, VStack } from '@chakra-ui/layout'
 import NextLink from 'next/link'
-import React from 'react'
 import Layout from '../components/Layout'
 
 // http://gimite.hatenablog.com/entry/20110108/1294495863
